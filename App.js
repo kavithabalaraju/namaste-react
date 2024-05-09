@@ -1,26 +1,30 @@
-/** const heading = React.createElement("h1",{id:"heading",xyz:"abc"},"Hello World from the React !");
 
-console.log(heading);
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+//JSX==>Babel traspiled to react.createElement==> createElement JS Object==>HTLElement(render)
+//React element
+const jsxHeading = (
+<h1 className = "head" tabIndex = "5">
+    Namaste React from JSX !</h1>);
+//root.render(jsxHeading); //you can't render the functional component like this
+
+//Title component
+const Title = () => (
+    <h1 className="title">This is Title component</h1>
+);
+
+//React functional component
+// Component composition means calling one component inside another component called comp composition
+const Number = 1000;
+
+const HeadingComponent = () =>(
+     <div id="container">    
+    <Title/>
+    <h2>{Number}</h2>
+    {Title()}
+    <h1 className ="heading">Namaste React Functional Component</h1>
+    </div>
+);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading); //object it convert to h1 tag and pass to browser */
-
-/**
- * <div id = "parent">
- * <div id = "child1">
- * <h1>I'm h1 tag</h1>
- * /div>
- *  <div id = "child2">
- * <h2>I'm h2 tag</h2>
- * /div>
- * </div> 
- */
-
-//How do we create a nested element in react
-const parent = React.createElement("div",{id:"parent"},[
-React.createElement("div",{id:"child1"},
-[React.createElement("h1",{},"I'm h1 tag here"),React.createElement("h2",{},"I'm h2 tag here")]),
-React.createElement("div",{id:"child2"},
-[React.createElement("h1",{},"I'm h1 tag here"),React.createElement("h2",{},"I'm h2 tag here")])]);
-console.log(parent);
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+root.render(<HeadingComponent/>);
