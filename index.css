@@ -1,3 +1,11 @@
-#heading{
-    color: red;
+
+.logo{
+width: 100px;
+}
+.header{
+    display: flex;
+}
+.nav-items > ul {
+    display: flex;
+
 }
