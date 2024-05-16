@@ -2,29 +2,30 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-//JSX==>Babel traspiled to react.createElement==> createElement JS Object==>HTLElement(render)
-//React element
-const jsxHeading = (
-<h1 className = "head" tabIndex = "5">
-    Namaste React from JSX !</h1>);
-//root.render(jsxHeading); //you can't render the functional component like this
+const Header = ()=>{
+    return(
+    <div className="header">
+        <div className="log-container">
+                <img className = "logo" src = "https://images.unsplash.com/photo-1615719413546-198b25453f85?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+           </div> 
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact Us</li>
+                    <li>Cart</li>
+                </ul>
+            </div>
 
-//Title component
-const Title = () => (
-    <h1 className="title">This is Title component</h1>
-);
-
-//React functional component
-// Component composition means calling one component inside another component called comp composition
-const Number = 1000;
-
-const HeadingComponent = () =>(
-     <div id="container">    
-    <Title/>
-    <h2>{Number}</h2>
-    {Title()}
-    <h1 className ="heading">Namaste React Functional Component</h1>
+    </div>)
+}
+const AppLayout = () => {
+    return (<div className = "app">
+        <Header/>
     </div>
-);
+    
+
+    );
+}
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeadingComponent/>);
+root.render(<AppLayout/>);
