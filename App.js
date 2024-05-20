@@ -18,14 +18,47 @@ const Header = ()=>{
             </div>
 
     </div>)
+} 
+const Body = () => {
+    return (<div className="body">
+        <div className="search">Search</div>
+        <div className="res-container">
+        <ResturantCard/> 
+        <ResturantCard/> 
+        <ResturantCard/> 
+        <ResturantCard/> 
+        <ResturantCard/>
+        <ResturantCard/>
+        <ResturantCard/>
+        <ResturantCard/>
+        <ResturantCard/>
+        <ResturantCard/>
+        <ResturantCard/>
+        <ResturantCard/>
+        </div>
+    </div>
+
+    );
+}
+const ResturantCard = () => {
+    return (<div className="resCard">
+        <img className="rest-logo" alt = "res-logo" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_112,h_112,c_fill/inzruzexryj1attuojwi"></img>
+        <h3>Meghana Foods</h3>
+        <h4>South Indian biryani</h4>
+        <h5>4.4 Stars</h5>
+
+    </div>);
+
 }
 const AppLayout = () => {
     return (<div className = "app">
         <Header/>
+        <Body/>
     </div>
     
 
     );
 }
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<AppLayout/>);
