@@ -183,7 +183,7 @@ const ResturantCard = (props) => {
     const {resData} = props;
     console.log(resData);
     return (<div className="resCard">
-        <img className="rest-logo" alt = "res-logo" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_112,h_112,c_fill/inzruzexryj1attuojwi"></img>
+        <img className="rest-logo" alt = "res-logo" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+resData[0].info.cloudinaryImageId}></img>
         
         <h3>{resData[0].info.name}</h3>
         <h4>{resData[0].info.cuisines}</h4>
