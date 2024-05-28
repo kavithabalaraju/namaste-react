@@ -19,37 +19,30 @@ const Header = ()=>{
 
     </div>)
 } 
-const Body = () => {
-    return (<div className="body">
-        <div className="search">Search</div>
-        <div className="res-container">
-        <ResturantCard/> 
-        <ResturantCard/> 
-        <ResturantCard/> 
-        <ResturantCard/> 
-        <ResturantCard/>
-        <ResturantCard/>
-        <ResturantCard/>
-        <ResturantCard/>
-        <ResturantCard/>
-        <ResturantCard/>
-        <ResturantCard/>
-        <ResturantCard/>
-        </div>
-    </div>
-
-    );
-}
-const ResturantCard = () => {
+const ResturantCard = (props) => {
+    console.log(props);
     return (<div className="resCard">
         <img className="rest-logo" alt = "res-logo" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_112,h_112,c_fill/inzruzexryj1attuojwi"></img>
-        <h3>Meghana Foods</h3>
-        <h4>South Indian biryani</h4>
+        <h3>{props.resName}</h3>
+        <h4>{props.cuisines}</h4>
         <h5>4.4 Stars</h5>
 
     </div>);
 
 }
+const Body = () => {
+    return (<div className="body">
+        <div className="search">Search</div>
+        <div className="res-container">
+        <ResturantCard resName = "Meghana Foods" cuisines = "South Indian biryani, Soups"/> 
+        <ResturantCard resName = "KFC" cuisines = "chiken, burger "/> 
+
+        </div>
+    </div>
+
+    );
+}
+
 const AppLayout = () => {
     return (<div className = "app">
         <Header/>
