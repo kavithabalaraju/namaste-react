@@ -1,7 +1,7 @@
 
 import React from "react";
 import ReactDOM from "react-dom/client";
-const resObj = [
+const resList = [
     {
       "info": {
         "id": "11091",
@@ -183,12 +183,12 @@ const ResturantCard = (props) => {
     const {resData} = props;
     console.log(resData);
     return (<div className="resCard">
-        <img className="rest-logo" alt = "res-logo" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+resData[0].info.cloudinaryImageId}></img>
+        <img className="rest-logo" alt = "res-logo" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+resData.info.cloudinaryImageId}></img>
         
-        <h3>{resData[0].info.name}</h3>
-        <h4>{resData[0].info.cuisines}</h4>
-        <h5>{resData[0].info.avgRating} Stars</h5>
-        <h5>{resData[0].info.sla.deliveryTime} mins</h5>
+        <h3>{resData.info.name}</h3>
+        <h4>{resData.info.cuisines.join(", ")}</h4>
+        <h5>{resData.info.avgRating} Stars</h5>
+        <h5>{resData.info.sla.deliveryTime} minutes</h5>
     </div>);
 
 }
@@ -196,7 +196,8 @@ const Body = () => {
     return (<div className="body">
         <div className="search">Search</div>
         <div className="res-container">
-        <ResturantCard resData = {resObj}/> 
+        <ResturantCard resData = {resList[0]}/>
+        <ResturantCard resData = {resList[1]}/> 
 
         </div>
     </div>
