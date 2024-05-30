@@ -15,3 +15,14 @@
 -Consistent hashing algorithm
 -Zero Configuration
 -Automatic code splitting
+
+Two types of Export/Import
+
+-->Default Export/Import
+export default Component/Variable;
+import Component/Varaible from "path";
+
+Named Export/Import
+
+export constant Component/Varaible name;
+import {Component/Varaible name} from path;
