@@ -4,7 +4,8 @@ import { useState } from "react";
 
 const Body = () => {
     //Local state Varairble - Super powerful varaible
-    const [listOfResturants] = useState([{
+    //setlistOfResturants is function to change/modify the listOfResturants react varaible
+    const [listOfResturants,setlistOfResturants] = useState([{
         "info": {
             "id": "11091",
             "name": "Pizza Hut",
@@ -77,9 +78,10 @@ const Body = () => {
         <div className="filter">
             <button className="filter-btn" onClick={()=>{
                 //Filter logic
-                listOfResturants = listOfResturants.filter((res)=>
+                const filteredList = listOfResturants.filter((res)=>
                     res.info.avgRating>4);
-             console.log(listOfResturants);
+                setlistOfResturants(filteredList);
+             console.log(filteredList);
              console.log("button is clicked");
             }}>Top Rated Resturants</button>
             </div>
