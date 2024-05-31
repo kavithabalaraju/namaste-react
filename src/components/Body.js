@@ -1,44 +1,12 @@
 import ResturantCard from "./ResturantCard";
 import resList from "../utils/mockData";
 import { useState } from "react";
+import resList from "../utils/mockData";
 
 const Body = () => {
     //Local state Varairble - Super powerful varaible
     //setlistOfResturants is function to change/modify the listOfResturants react varaible
-    const [listOfResturants,setlistOfResturants] = useState([{
-        "info": {
-            "id": "11091",
-            "name": "Pizza Hut",
-            "cloudinaryImageId": "2b4f62d606d1b2bfba9ba9e5386fabb7",
-            "cuisines": [
-              "Pizzas"
-            ],
-            "avgRating": 3.8,
-            "sla": {
-              "deliveryTime": 33
-            },
-        },
-    },
-    {
-        "info": {
-            "id": "659668",
-            "name": "UBQ by Barbeque Nation",
-            "cloudinaryImageId": "ffe4084febdec52732dffd3624f4e6c1",
-            "cuisines": [
-                "North Indian",
-                "Barbecue",
-                "Biryani",
-                "Kebabs",
-                "Mughlai",
-                "Desserts"
-              ],
-            "avgRating": 4.5,
-            "sla": {
-              "deliveryTime": 30
-            },
-        },
-
-    }]);
+    const [listOfResturants,setlistOfResturants] = useState(resList);
     let listOfResturantsJS = [{
         "info": {
             "id": "11091",
