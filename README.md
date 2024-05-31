@@ -26,3 +26,8 @@ Named Export/Import
 
 export constant Component/Varaible name;
 import {Component/Varaible name} from path;
+
+# React Hooks
+(Normal JS utility function) written by FB they have written in react 
+useState() : 80% using this Hooks --> Gives superpowerful react varaible
+useEffect() :20% using this hooks
