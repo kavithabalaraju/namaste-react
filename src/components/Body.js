@@ -1,12 +1,27 @@
 import ResturantCard from "./ResturantCard";
 import resList from "../utils/mockData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import resList from "../utils/mockData";
+
 
 const Body = () => {
     //Local state Varairble - Super powerful varaible
     //setlistOfResturants is function to change/modify the listOfResturants react varaible
     const [listOfResturants,setlistOfResturants] = useState(resList);
+
+    useEffect(()=>{
+        fetchData();
+        console.log("use effect called");
+
+    },[]);
+    const fetchData = async ()=>{
+
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.37240&lng=78.43780&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const json = await data.json();
+        console.log(json);
+        setlistOfResturants(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+    }
+    
     let listOfResturantsJS = [{
         "info": {
             "id": "11091",
