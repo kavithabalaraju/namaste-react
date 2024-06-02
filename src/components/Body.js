@@ -21,8 +21,11 @@ const Body = () => {
         console.log(json);
         //Optional Chaining
         setlistOfResturants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    }
+    };
     
+    if(listOfResturants.length == 0){
+       return <h1>Loading...</h1>
+    }
     return (<div className="body">
         <div className="filter">
             <button className="filter-btn" onClick={()=>{
@@ -31,12 +34,11 @@ const Body = () => {
                     res.info.avgRating>4);
                 setlistOfResturants(filteredList);
              console.log(filteredList);
-             console.log("button is clicked");
             }}>Top Rated Resturants</button>
             </div>
         <div className="res-container">
             {listOfResturants.map((restaurant) => 
-                (<ResturantCard key = {restaurant.info.id} resData = {restaurant}/>))};
+                (<ResturantCard key = {restaurant.info.id} resData = {restaurant}/>))}
 
         </div>
     </div>
