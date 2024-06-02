@@ -24,11 +24,16 @@ const Body = () => {
         setlistOfResturants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
     
-    if(listOfResturants.length == 0){
-      // return <h1>Loading...</h1>
-      return <Shimmer/>
-    }
-    return (<div className="body">
+    //This is called conditional redering 
+
+    // if(listOfResturants.length == 0){
+    //   // return <h1>Loading...</h1>
+    //   return <Shimmer/>
+    // }
+
+    //Use ternory operator to render
+
+    return (listOfResturants.length == 0)?<Shimmer/>:(<div className="body">
         <div className="filter">
             <button className="filter-btn" onClick={()=>{
                 //Filter logic
