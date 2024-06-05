@@ -66,3 +66,7 @@ width: 100px;
     padding: auto;
     cursor: pointer;
 }
+.search-btn{
+    margin: 10px;
+    cursor: pointer;
+}
