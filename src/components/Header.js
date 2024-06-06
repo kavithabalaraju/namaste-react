@@ -7,10 +7,11 @@ const Header = ()=>{
    //Use useEffect takes two parameters one=>callback fun and second=>dependancy array
    //if no dependancy array => useEffect is called on every render of comp(Header)
    //if dependancy array is empty=>useEffect is called initial render(just only once)
+   //if dependancy array is not empty=>useEffect is called when dependacy array is updated
 
    useEffect(()=>{
     console.log("useEffect called"); 
-   },[])
+   },[btnReactName])
 
     return(
     <div className="header">
