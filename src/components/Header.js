@@ -1,5 +1,6 @@
 import { useState, useEffect} from "react";
 import { LOGO_URL } from "../utils/constants";
+import { Link, NavLink } from "react-router-dom";
 const Header = ()=>{
     const [btnReactName,setBtnReactName] = useState("Login");
     console.log("Header component render");
@@ -20,9 +21,14 @@ const Header = ()=>{
            </div> 
             <div className="nav-items">
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact Us</li>
+                    <li><Link to="/">Home</Link></li>
+                    <li>
+                    <Link to="/about">About Us</Link>
+                
+                    </li>
+                    <li>
+                        <Link to="/contact">Contact Us</Link>
+                        </li>
                     <li>Cart</li>
                     <button className="btnName" onClick={()=>{
                         //Toogle function if btnReactName is login then change to logut otherwise change to login once again
