@@ -3,15 +3,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
-import { createBrowserRouter } from "react-router-dom";
-import { RouterProvider,Outlet} from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
- 
+import ResturantMenu from "./components/ResturantMenu";
+import { useEffect, useState} from "react";
+import { createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
+
 const AppLayout = () => {
+     // this out let is used to replace with respective componet
     return (<div className = "app">
-        <Header/>
+        <Header/>   
         <Outlet/>
     </div>
     
@@ -34,6 +36,10 @@ const appRouter = createBrowserRouter([
         {
             path:"/contact",
             element:<Contact/>
+        },
+        {
+            path:"/resturant",
+            element:<ResturantMenu/>
         }],
         errorElement:<Error/>
     },
