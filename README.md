@@ -31,3 +31,8 @@ import {Component/Varaible name} from path;
 (Normal JS utility function) written by FB they have written in react 
 useState() : 80% using this Hooks --> Gives superpowerful react varaible
 useEffect() :20% using this hooks
+useRouterError(): This hook is given by the react-router-don To show the proper erros
+
+#There are two types of routings in web apps
+Client side routing
+Server side routing
