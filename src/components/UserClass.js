@@ -4,11 +4,15 @@ class UserClass extends React.Component{
     constructor(props){
         super(props);
         console.log(props);
+        this.state = {
+            count:0
+        };
     }
 render(){
    const {name,location} = this.props;
     return (
     <div>
+        <h1>Count = {this.state.count}</h1>
         <h3>Name:{name}</h3>
         <h3>Location:{location}</h3>
         <h4>Contact:chkavitha324</h4>
