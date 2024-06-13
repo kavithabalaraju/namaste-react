@@ -17,9 +17,11 @@ class About extends Component{
             <title>About</title>
             <h1>This is about page</h1>
             <UserClass name={"First (class)"} location={"Hyderabad (class)"}/>
-            <UserClass name={"Second (class)"} location={"Hyderabad (class)"}/>
         </div>);
 
+    }
+    componentWillUnmount(){
+        console.log("componentWillUnmount");
     }
 
 };
