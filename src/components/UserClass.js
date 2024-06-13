@@ -2,7 +2,7 @@ import React from "react";
 
 class UserClass extends React.Component{
     constructor(props){
-        console.log("Child Constructor");
+        console.log(props.name+ "Child Constructor");
         super(props);
         console.log(props);
         this.state = {
@@ -11,7 +11,7 @@ class UserClass extends React.Component{
 
     }
 render(){
-    console.log("Child Render");
+    console.log(this.props.name+"Child Render");
    const {name,location} = this.props;
     return (
     <div>
@@ -32,7 +32,7 @@ render(){
 }
 componentDidMount(){
     //This fun is used for invoke the API call in CBC
-    console.log("Child componentDidMount");
+    console.log(this.props.name+"Child componentDidMount");
 }
 };
 export default UserClass;
