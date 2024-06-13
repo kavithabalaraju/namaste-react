@@ -2,6 +2,7 @@ import React from "react";
 
 class UserClass extends React.Component{
     constructor(props){
+        console.log("Child Constructor");
         super(props);
         console.log(props);
         this.state = {
@@ -10,10 +11,12 @@ class UserClass extends React.Component{
 
     }
 render(){
+    console.log("Child Render");
    const {name,location} = this.props;
     return (
     <div>
         <button onClick={()=>{
+            //Never update the state variable directly (this.state.count = this.state.count+1)
             this.setState({
                 count:this.state.count+1
             })
@@ -26,6 +29,10 @@ render(){
         <h4>Contact:chkavitha324</h4>
     </div>
     )
+}
+componentDidMount(){
+    //This fun is used for invoke the API call in CBC
+    console.log("Child componentDidMount");
 }
 };
 export default UserClass;
