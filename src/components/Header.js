@@ -1,6 +1,8 @@
 import { useState, useEffect} from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link, NavLink } from "react-router-dom";
+import EmojiPicker from "emoji-picker-react";
+
 const Header = ()=>{
     const [btnReactName,setBtnReactName] = useState("Login");
     console.log("Header component render");
@@ -21,6 +23,7 @@ const Header = ()=>{
            </div> 
             <div className="nav-items">
                 <ul>
+                    <li>Online Status:{}</li>
                     <li><Link to="/">Home</Link></li>
                     <li>
                     <Link to="/about">About Us</Link>
