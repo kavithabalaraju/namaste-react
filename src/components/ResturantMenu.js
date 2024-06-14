@@ -1,7 +1,7 @@
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import useResturantMenu from "./useResturantMenu";
+import useResturantMenu from "../utils/useResturantMenu";
 
 const ResturantMenu = ()=>{
    
