@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+
 
 
 const Body = () => {
@@ -27,15 +29,20 @@ const Body = () => {
         setlistOfResturants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilterResturants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
-    
+    const onlineStatus = useOnlineStatus();
+    console.log(onlineStatus);
+        
     //This is called conditional redering 
 
     // if(listOfResturants.length == 0){
     //   // return <h1>Loading...</h1>
     //   return <Shimmer/>
     // }
+    if(onlineStatus == false)
+        return <div><h1>Looks you are offliline!!. Please check internet</h1></div>
 
     //Use ternory operator to render
+
 
     return (listOfResturants.length == 0)?<Shimmer/>:(<div className="body">
         <div className="filter">
