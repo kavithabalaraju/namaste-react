@@ -32,6 +32,9 @@ const Header = ()=>{
                     <li>
                         <Link to="/contact">Contact Us</Link>
                         </li>
+                        <li>
+                            <Link to = "/grocery">Grocery</Link>
+                        </li>
                     <li>Cart</li>
                     <button className="btnName" onClick={()=>{
                         //Toogle function if btnReactName is login then change to logut otherwise change to login once again
