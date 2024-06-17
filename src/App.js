@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -9,6 +9,8 @@ import Error from "./components/Error";
 import ResturantMenu from "./components/ResturantMenu";
 import { useEffect, useState} from "react";
 import { createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
+
+
 
 const AppLayout = () => {
      // this out let is used to replace with respective componet
@@ -20,6 +22,7 @@ const AppLayout = () => {
 
     );
 }
+const Grocery = lazy(()=>import("./components/Grocery"));
 
 const appRouter = createBrowserRouter([
     {
@@ -36,6 +39,15 @@ const appRouter = createBrowserRouter([
         {
             path:"/contact",
             element:<Contact/>
+        },
+        // fallback is function that returns piece of JSX
+        {
+            path:"/grocery",
+            element:<Suspense fallback = {<h1>Loading...</h1>}>
+            <Grocery/>
+            </Suspense>
+            
+            
         },
         {
             path:"/resturants/:resId",
