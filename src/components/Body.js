@@ -46,8 +46,8 @@ const Body = () => {
 
     return (listOfResturants.length == 0)?<Shimmer/>:(<div className="body">
         <div className="filter">
-            <div className="search">
-            <input type="text" placeholder="Enter Text" value={srchText} onChange={(e) =>{
+            <div className="search m-4 p-4 border-solid border-black">
+            <input className="border-2" type="text" placeholder="Enter Text" value={srchText} onChange={(e) =>{
                 //React is rerendering the body component and its updating the input value only diff is input with new Ver DOM and OLD Ver DOM
               setSrchText(e.target.value);
                // each time body component is rerendering  when we type text in input 
@@ -55,14 +55,14 @@ const Body = () => {
             }
 
             }></input>
-            <button className="search-btn" onClick={()=>{
+            <button className="bg-green-100 m-4 px-4 py-2 rounded-lg" onClick={()=>{
             console.log(srchText);
             const searchList = listOfResturants.filter((res)=>res.info.name.toLowerCase().includes(srchText.toLowerCase()));
             console.log(searchList);
             setFilterResturants(searchList);
 
             }}>Search</button>
-            <button className="filter-btn" onClick={()=>{
+            <button className="bg-gray-200 px-4 py-2 rounded-lg" onClick={()=>{
                 //Filter logic
                 const filteredList = listOfResturants.filter((res)=>
                     res.info.avgRating>4);
@@ -71,7 +71,7 @@ const Body = () => {
             }}>Top Rated Resturants</button>
             </div>
             </div>
-        <div className="res-container">
+        <div className="flex flex-wrap">
             {filterResturants.map((restaurant) => 
                 (<Link key = {restaurant.info.id} to={"/resturants/"+restaurant.info.id}>
                     <ResturantCard  resData = {restaurant}/></Link>))}
