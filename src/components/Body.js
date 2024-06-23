@@ -1,4 +1,4 @@
-import ResturantCard from "./ResturantCard";
+import ResturantCard, { withPromotedLabel } from "./ResturantCard";
 import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import resList from "../utils/mockData";
@@ -14,6 +14,8 @@ const Body = () => {
     const [listOfResturants,setlistOfResturants] = useState([]);
     const [srchText,setSrchText] =  useState("");
     const [filterResturants,setFilterResturants] = useState([]);
+
+    const ResturantCardPromoted = withPromotedLabel(ResturantCard);
     
     useEffect(()=>{
         fetchData();
@@ -74,7 +76,8 @@ const Body = () => {
         <div className="flex flex-wrap">
             {filterResturants.map((restaurant) => 
                 (<Link key = {restaurant.info.id} to={"/resturants/"+restaurant.info.id}>
-                    <ResturantCard  resData = {restaurant}/></Link>))}
+                
+                 <ResturantCard  resData = {restaurant}/></Link>))}
 
         </div>
     </div>
