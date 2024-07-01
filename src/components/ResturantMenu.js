@@ -2,6 +2,7 @@ import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import useResturantMenu from "../utils/useResturantMenu";
+import ResturantCategory from "./ResturantCategory";
 
 const ResturantMenu = ()=>{
    
@@ -17,18 +18,27 @@ let menuItems = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?
 if(menuItems == null){
     menuItems = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards
 }
-    console.log(menuItems);
+
+    const categories = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(c=>c.card?.card?.["@type"]
+        == "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+   
     return  (
-        <div className="restMenu">
-        <h3>{name}</h3>
-        <h4>{cuisines.join(",")}</h4>
-        <h1>Menu</h1>
+        <div className="text-center font-bold">
+        <h1 className="text-2xl my-6">{name}</h1>
+        <p className="text-lg">{cuisines.join(",")}</p>
+
+        {categories.map((category)=><ResturantCategory key = {category?.card?.card?.title} data = {category?.card?.card}/>)
+        }
+
+       {/**  <h1>Menu</h1>
         <ul>
             {
                 //Map takes callback function
                 menuItems.map(item => <li key={item.card.info.id}>{item.card.info.name} - Rs.{item.card.info.price/100 || item.card.info.defaultPrice/100}</li>)
             }
-        </ul>
+        </ul> */}
+
     </div>)
 }
 
